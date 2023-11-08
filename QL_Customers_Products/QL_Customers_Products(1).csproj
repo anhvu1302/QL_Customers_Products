@@ -12,7 +12,6 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -47,42 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaoCaoDoanhThu.cs" />
-    <Compile Include="Chi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Chi.Designer.cs">
-      <DependentUpon>Chi.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ChiTietHDBH.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ChiTietHDBH.Designer.cs">
-      <DependentUpon>ChiTietHDBH.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ChiTietHDNH.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ChiTietHDNH.Designer.cs">
-      <DependentUpon>ChiTietHDNH.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMain.designer.cs">
-      <DependentUpon>frmMain.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Home.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Home.Designer.cs">
-      <DependentUpon>Home.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\SanPham.cs" />
     <Compile Include="Program.cs" />
@@ -95,38 +63,11 @@
     </Compile>
     <Compile Include="SharedMethods.cs" />
     <Compile Include="SQLConfig.cs" />
-    <Compile Include="ThongKe.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ThongKe.Designer.cs">
-      <DependentUpon>ThongKe.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Thu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Thu.Designer.cs">
-      <DependentUpon>Thu.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Chi.resx">
-      <DependentUpon>Chi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ChiTietHDBH.resx">
-      <DependentUpon>ChiTietHDBH.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ChiTietHDNH.resx">
-      <DependentUpon>ChiTietHDNH.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMain.resx">
-      <DependentUpon>frmMain.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmThanhToan.resx">
       <DependentUpon>frmThanhToan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Home.resx">
-      <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -138,12 +79,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ThongKe.resx">
-      <DependentUpon>ThongKe.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Thu.resx">
-      <DependentUpon>Thu.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

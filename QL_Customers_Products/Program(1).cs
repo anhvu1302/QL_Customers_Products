@@ -16,8 +16,7 @@ namespace QL_Customers_Products
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new frmDangNhap());
-            Application.Run(new frmMain());
+            Application.Run(new frmDangNhap());
         }
     }
 }
