@@ -43,7 +43,11 @@ namespace QL_Customers_Products
             frm.TopLevel = false;
             frm.Show();
         }
-        
 
+        private void sbtn_TTHoaDon_Click(object sender, EventArgs e)
+        {
+            closeForm();
+            showFrm(new frmThanhToan());
+        }
     }
 }

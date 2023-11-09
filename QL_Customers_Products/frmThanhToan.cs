@@ -5,6 +5,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Printing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -213,9 +215,9 @@ namespace QL_Customers_Products
                         foreach (DataRow row in dataTable.Rows)
                         {
                             txt_TenSanPham.Text = row[1].ToString();
-                            int giaGoc = int.Parse(row[4].ToString());
+                            long giaGoc = int.Parse(row[4].ToString());
                             txt_DonGia.Text = giaGoc.ToString();
-                            int giamGia = int.Parse(row[5].ToString());
+                            long giamGia = int.Parse(row[5].ToString());
                             nud_GiamGia.Value = giamGia;
                             txt_ThanhTien.Text = (giaGoc*(100-giamGia)/100).ToString();
 
@@ -345,7 +347,8 @@ namespace QL_Customers_Products
                         }
 
                     }
-                    MessageBox.Show("Đã mua hàng thành công", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    InHoaDon();
+                    MessageBox.Show("Đã xuất hoá đơn thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ResetHoaDon();
                 }
             }
@@ -440,5 +443,163 @@ namespace QL_Customers_Products
             }
         }
 
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            Brush brush = Brushes.Black;
+
+            //Header
+            string txtHeader = "HÓA ĐƠN THANH TOÁN";
+            Font frontHeader = new Font("Arial", 24, FontStyle.Bold);
+            e.Graphics.DrawString(txtHeader, frontHeader, brush, new Point(centerRow(e, txtHeader, frontHeader), 20));
+
+            //Chi Nhánh
+            string txtChiNhanh = cboChiNhanh.Text;
+            Font frontChiNhanh = new Font("Arial", 18, FontStyle.Bold);
+            e.Graphics.DrawString(txtChiNhanh, frontChiNhanh, brush, new Point(centerRow(e, txtChiNhanh, frontChiNhanh), 65));
+
+            //Tên Chi Nhánh
+            string txtTenChiNhanh = GetDiaChiChiNhanh(cboChiNhanh.Text);
+
+            Font frontTenChiNhanh = new Font("Arial", 14, FontStyle.Regular);
+            e.Graphics.DrawString(txtTenChiNhanh, frontTenChiNhanh, brush, new Point(centerRow(e, txtTenChiNhanh, frontTenChiNhanh), 100));
+
+            //Số điện thoại
+            string txtSDT = "Hotline: 111 222 3333";
+            Font frontSDT = new Font("Arial", 14, FontStyle.Bold);
+            e.Graphics.DrawString(txtSDT, frontSDT, brush, new Point(centerRow(e, txtSDT, frontSDT), 130));
+
+            //Nhân viên     
+            string txtNhanVien = "Nhân viên: " + txt_TenNhanVien.Text;
+            Font frontNhanVien = new Font("Arial", 12, FontStyle.Regular);
+            e.Graphics.DrawString(txtNhanVien, frontNhanVien, brush, new Point(10, 190));
+
+            //Thời gian xuất hóa đơn
+            DateTime gioXuatHD = dtpNgayBan.Value;
+            string txtGioXuatHD = "Thời gian xuất hóa đơn: " + gioXuatHD.ToString("HH:mm:ss dd/MM/yyyy");
+            Font frontGioXuatHD = new Font("Arial", 12, FontStyle.Regular);
+            e.Graphics.DrawString(txtGioXuatHD, frontGioXuatHD, brush, new Point(10, 210));
+
+            //Chuỗi ------------
+            string breakString = string.Empty;
+            for (int i = 10; i <= 150; i++)
+            {
+                breakString += "-";
+            }
+            Font frontBreakString = new Font("Arial", 12, FontStyle.Bold);
+            e.Graphics.DrawString(breakString, frontBreakString, brush, new Point(10, 240));
+
+            int y = 260;
+
+            foreach (ListViewItem item in lsvSanPham.Items)
+            {
+
+                //Tên sản phẩm
+                string txtTenSP = item.SubItems[1].Text;
+                Font frontTenSP = new Font("Arial", 12, FontStyle.Regular);
+                e.Graphics.DrawString(txtTenSP, frontTenSP, brush, new Point(10, y));
+
+                //Giảm giá
+                int giaGiam = int.Parse(item.SubItems[2].Text) - (int.Parse(item.SubItems[2].Text) * int.Parse(item.SubItems[4].Text) / 100);
+                string txtGiaGiam = string.Format("{0:n0}", giaGiam);
+                Font frontGiaGiam = new Font("Arial", 12, FontStyle.Regular);
+                e.Graphics.DrawString(txtGiaGiam, frontGiaGiam, brush, new Point(10, y + 20));
+                int giaGiamSize = (int)((SizeF)e.Graphics.MeasureString(txtGiaGiam, frontGiaGiam)).Width;
+
+                //Giá
+                string txtGia = string.Format("{0:n0}", int.Parse(item.SubItems[2].Text));
+                Font frontGia = new Font("Arial", 12, FontStyle.Strikeout);
+                e.Graphics.DrawString(txtGia, frontGia, brush, new Point(giaGiamSize + 20, y + 20));
+                int giaSize = (int)((SizeF)e.Graphics.MeasureString(txtGia, frontGia)).Width;
+
+                //Số lượng
+                string txtSoLuong = item.SubItems[3].Text;
+                Font frontSoLuong = new Font("Arial", 12, FontStyle.Regular);
+                e.Graphics.DrawString(txtSoLuong, frontSoLuong, brush, new Point(450, y + 20));
+
+                //ThanhTien
+                string txtThanhTien = string.Format("{0:n0}", int.Parse(item.SubItems[5].Text));
+                Font frontThanhTien = new Font("Arial", 12, FontStyle.Regular);
+                int thanhTienSize = (int)((SizeF)e.Graphics.MeasureString(txtThanhTien, frontThanhTien)).Width;
+                e.Graphics.DrawString(txtThanhTien, frontThanhTien, brush, new Point(e.PageBounds.Width - thanhTienSize - 15, y + 20));
+
+                y += 40;
+            }
+
+            //Chuỗi ------------
+            string breakString2 = string.Empty;
+            for (int i = 10; i <= 150; i++)
+            {
+                breakString2 += "-";
+            }
+            Font frontBreakString2 = new Font("Arial", 12, FontStyle.Bold);
+            e.Graphics.DrawString(breakString, frontBreakString, brush, new Point(10, y));
+
+
+
+            string txtTongCong = "TỔNG CỘNG";
+            Font frontTongCong = new Font("Arial", 18, FontStyle.Bold);
+            e.Graphics.DrawString(txtTongCong, frontTongCong, brush, new Point(10, y + 30));
+
+
+
+            //Số lượng
+            string txtDVT = "VNĐ";
+            Font frontDVT = new Font("Arial", 18, FontStyle.Bold);
+            e.Graphics.DrawString(txtDVT, frontDVT, brush, new Point(450, y + 30));
+
+            //ThanhTien
+            string txtTongThanhTien = txt_TongTien.Text;
+            Font frontTongThanhTien = new Font("Arial", 18, FontStyle.Bold);
+            int tongThanhTienSize = (int)((SizeF)e.Graphics.MeasureString(txtTongThanhTien, frontTongThanhTien)).Width;
+            e.Graphics.DrawString(txtTongThanhTien, frontTongThanhTien, brush, new Point(e.PageBounds.Width - tongThanhTienSize - 15, y + 30));
+        }
+        private int centerRow(System.Drawing.Printing.PrintPageEventArgs e, string text, Font font)
+        {
+            int pageWidth = e.PageBounds.Width;
+            SizeF textSize = e.Graphics.MeasureString(text, font);
+            int x = (int)((pageWidth - textSize.Width) / 2);
+            return x;
+        }
+        private string GetDiaChiChiNhanh(string tenChiNhanh)
+        {
+            string diaChi = string.Empty;
+            sql = string.Format("SELECT DiaChi FROM ChiNhanh WHERE TenChiNhanh = N'{0}'", tenChiNhanh);
+            DataTable dataTable = config.ExecuteTableQuery(sql);
+            if (dataTable.Rows.Count > 0)
+            {
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    diaChi = row[0].ToString();
+                }
+            }
+            return diaChi;
+        }
+        private void InHoaDon()
+        {
+            try
+            {
+                string downloadFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\Downloads";
+                string filePath = Path.Combine(downloadFolderPath, "HoaDon.pdf");
+
+                PrintDocument printDocument = new PrintDocument();
+                printDocument.PrintPage += new PrintPageEventHandler(printDocument1_PrintPage);
+                printDocument.PrinterSettings.PrintToFile = true;
+                printDocument.PrinterSettings.PrintFileName = filePath;
+                printDocument.Print();
+
+                if (File.Exists(filePath))
+                {
+                    using (FileStream fs = new FileStream(filePath, FileMode.Create))
+                    {
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine($"Lỗi: {ex.Message}");
+            }
+
+        }
     }
 }

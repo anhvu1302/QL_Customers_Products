@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 
 public class SQLConfig
 {
-    SqlConnection connection = new SqlConnection(@"Data Source =DESKTOP-UE7V70U\SQLEXPRESS;Initial Catalog=QLKH_SP; User ID=sa;Password=123");
+    SqlConnection connection = new SqlConnection(@"Data Source = VANANH;Initial Catalog=QLKH_SP; User ID=sa;Password=123");
     //Truy vấn
     public bool ExecuteNonQuery(string query)
     {

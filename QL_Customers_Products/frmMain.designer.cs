@@ -30,7 +30,7 @@
         {
             this.sbtn_Dashboard = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.sbtn_SanPham = new System.Windows.Forms.ToolStripButton();
+            this.sbtn_TTHoaDon = new System.Windows.Forms.ToolStripButton();
             this.sbtn_KhachHang = new System.Windows.Forms.ToolStripButton();
             this.sbtn_DonHang = new System.Windows.Forms.ToolStripButton();
             this.sbtn_HoaDon = new System.Windows.Forms.ToolStripButton();
@@ -48,7 +48,7 @@
             this.sbtn_Dashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.sbtn_Dashboard.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.sbtn_Dashboard.Name = "sbtn_Dashboard";
-            this.sbtn_Dashboard.Size = new System.Drawing.Size(134, 30);
+            this.sbtn_Dashboard.Size = new System.Drawing.Size(112, 32);
             this.sbtn_Dashboard.Text = "Dashboard";
             this.sbtn_Dashboard.Click += new System.EventHandler(this.sbtn_Dashboard_Click);
             // 
@@ -59,7 +59,7 @@
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sbtn_Dashboard,
-            this.sbtn_SanPham,
+            this.sbtn_TTHoaDon,
             this.sbtn_KhachHang,
             this.sbtn_DonHang,
             this.sbtn_HoaDon,
@@ -73,15 +73,16 @@
             this.toolStrip1.TabIndex = 41;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // sbtn_SanPham
+            // sbtn_TTHoaDon
             // 
-            this.sbtn_SanPham.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sbtn_SanPham.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(54)))), ((int)(((byte)(137)))));
-            this.sbtn_SanPham.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.sbtn_SanPham.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.sbtn_SanPham.Name = "sbtn_SanPham";
-            this.sbtn_SanPham.Size = new System.Drawing.Size(125, 30);
-            this.sbtn_SanPham.Text = "Sản Phẩm";
+            this.sbtn_TTHoaDon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sbtn_TTHoaDon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(54)))), ((int)(((byte)(137)))));
+            this.sbtn_TTHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.sbtn_TTHoaDon.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.sbtn_TTHoaDon.Name = "sbtn_TTHoaDon";
+            this.sbtn_TTHoaDon.Size = new System.Drawing.Size(192, 32);
+            this.sbtn_TTHoaDon.Text = "Thanh toán hóa đơn";
+            this.sbtn_TTHoaDon.Click += new System.EventHandler(this.sbtn_TTHoaDon_Click);
             // 
             // sbtn_KhachHang
             // 
@@ -90,7 +91,7 @@
             this.sbtn_KhachHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.sbtn_KhachHang.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.sbtn_KhachHang.Name = "sbtn_KhachHang";
-            this.sbtn_KhachHang.Size = new System.Drawing.Size(148, 30);
+            this.sbtn_KhachHang.Size = new System.Drawing.Size(121, 32);
             this.sbtn_KhachHang.Text = "Khách Hàng";
             // 
             // sbtn_DonHang
@@ -100,7 +101,7 @@
             this.sbtn_DonHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.sbtn_DonHang.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.sbtn_DonHang.Name = "sbtn_DonHang";
-            this.sbtn_DonHang.Size = new System.Drawing.Size(128, 30);
+            this.sbtn_DonHang.Size = new System.Drawing.Size(105, 32);
             this.sbtn_DonHang.Text = "Đơn Hàng";
             // 
             // sbtn_HoaDon
@@ -110,7 +111,7 @@
             this.sbtn_HoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.sbtn_HoaDon.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.sbtn_HoaDon.Name = "sbtn_HoaDon";
-            this.sbtn_HoaDon.Size = new System.Drawing.Size(114, 30);
+            this.sbtn_HoaDon.Size = new System.Drawing.Size(94, 32);
             this.sbtn_HoaDon.Text = "Hóa Đơn";
             // 
             // sbtn_NhanVien
@@ -120,7 +121,7 @@
             this.sbtn_NhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.sbtn_NhanVien.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.sbtn_NhanVien.Name = "sbtn_NhanVien";
-            this.sbtn_NhanVien.Size = new System.Drawing.Size(132, 30);
+            this.sbtn_NhanVien.Size = new System.Drawing.Size(106, 32);
             this.sbtn_NhanVien.Text = "Nhân Viên";
             // 
             // sbtn_PhanHoi
@@ -130,7 +131,7 @@
             this.sbtn_PhanHoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.sbtn_PhanHoi.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.sbtn_PhanHoi.Name = "sbtn_PhanHoi";
-            this.sbtn_PhanHoi.Size = new System.Drawing.Size(116, 30);
+            this.sbtn_PhanHoi.Size = new System.Drawing.Size(95, 32);
             this.sbtn_PhanHoi.Text = "Phản Hồi";
             // 
             // sbtn_ChiNhanh
@@ -140,7 +141,7 @@
             this.sbtn_ChiNhanh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.sbtn_ChiNhanh.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.sbtn_ChiNhanh.Name = "sbtn_ChiNhanh";
-            this.sbtn_ChiNhanh.Size = new System.Drawing.Size(133, 30);
+            this.sbtn_ChiNhanh.Size = new System.Drawing.Size(107, 32);
             this.sbtn_ChiNhanh.Text = "Chi Nhánh";
             // 
             // sbtn_Kho
@@ -150,12 +151,12 @@
             this.sbtn_Kho.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.sbtn_Kho.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.sbtn_Kho.Name = "sbtn_Kho";
-            this.sbtn_Kho.Size = new System.Drawing.Size(61, 30);
+            this.sbtn_Kho.Size = new System.Drawing.Size(51, 32);
             this.sbtn_Kho.Text = "Kho";
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1920, 1050);
@@ -174,7 +175,7 @@
         #endregion
         private System.Windows.Forms.ToolStripButton sbtn_Dashboard;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton sbtn_SanPham;
+        private System.Windows.Forms.ToolStripButton sbtn_TTHoaDon;
         private System.Windows.Forms.ToolStripButton sbtn_KhachHang;
         private System.Windows.Forms.ToolStripButton sbtn_DonHang;
         private System.Windows.Forms.ToolStripButton sbtn_HoaDon;
