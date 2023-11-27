@@ -375,7 +375,7 @@ namespace QL_Customers_Products
                 db.NhapHang.Add(nhapHang);
                 db.ChiTietHoaDonNhapHang.AddRange(chiTietNhapHangs);
                 db.SaveChanges();
-                MessageBox.Show("Lưu dữ liệu thành công!");
+                MessageBox.Show("Nhập hàng thành công!");
             }
             catch (DbUpdateException ex)
             {
@@ -440,8 +440,9 @@ namespace QL_Customers_Products
             textBox1.Text = totalAmount.ToString();
         }
 
-
-
-
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
