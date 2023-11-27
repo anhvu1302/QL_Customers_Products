@@ -38,8 +38,17 @@
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
@@ -53,11 +62,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppDataContext.cs" />
     <Compile Include="Chi.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Chi.designer.cs">
       <DependentUpon>Chi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChienDichQuangCao.cs">
+      <DependentUpon>MyDBEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChiNhanh.cs">
+      <DependentUpon>MyDBEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChiTietChienDichQuangCao.cs">
+      <DependentUpon>MyDBEF.tt</DependentUpon>
     </Compile>
     <Compile Include="ChiTietHDBH.cs">
       <SubType>Form</SubType>
@@ -71,6 +90,21 @@
     <Compile Include="ChiTietHDNH.designer.cs">
       <DependentUpon>ChiTietHDNH.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChiTietHoaDon.cs">
+      <DependentUpon>MyDBEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChiTietHoaDonNhapHang.cs">
+      <DependentUpon>MyDBEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChucVu.cs">
+      <DependentUpon>MyDBEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FNhapHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FNhapHang.designer.cs">
+      <DependentUpon>FNhapHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,7 +117,49 @@
     <Compile Include="frmMain.designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="HoaDon.cs">
+      <DependentUpon>MyDBEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KhachHang.cs">
+      <DependentUpon>MyDBEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KhoHang.cs">
+      <DependentUpon>MyDBEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LoaiSanPham.cs">
+      <DependentUpon>MyDBEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LoaiSanPhamCha.cs">
+      <DependentUpon>MyDBEF.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\SanPham.cs" />
+    <Compile Include="MyDBEF.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyDBEF.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MyDBEF.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyDBEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MyDBEF.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyDBEF.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="NguoiDung.cs">
+      <DependentUpon>MyDBEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NhaCungCap.cs">
+      <DependentUpon>MyDBEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien.cs">
+      <DependentUpon>MyDBEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NhapHang.cs">
+      <DependentUpon>MyDBEF.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="frmThanhToan.cs">
@@ -92,13 +168,28 @@
     <Compile Include="frmThanhToan.Designer.cs">
       <DependentUpon>frmThanhToan.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuangCao.cs">
+      <DependentUpon>MyDBEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QuayThanhToan.cs">
+      <DependentUpon>MyDBEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SanPham.cs">
+      <DependentUpon>MyDBEF.tt</DependentUpon>
+    </Compile>
     <Compile Include="SharedMethods.cs" />
     <Compile Include="SQLConfig.cs" />
+    <Compile Include="TheThanhVien.cs">
+      <DependentUpon>MyDBEF.tt</DependentUpon>
+    </Compile>
     <Compile Include="Thu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Thu.designer.cs">
       <DependentUpon>Thu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YkienKH.cs">
+      <DependentUpon>MyDBEF.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Chi.resx">
       <DependentUpon>Chi.cs</DependentUpon>
@@ -108,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChiTietHDNH.resx">
       <DependentUpon>ChiTietHDNH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FNhapHang.resx">
+      <DependentUpon>FNhapHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
@@ -131,6 +225,14 @@
     <EmbeddedResource Include="Thu.resx">
       <DependentUpon>Thu.cs</DependentUpon>
     </EmbeddedResource>
+    <EntityDeploy Include="MyDBEF.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MyDBEF.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="MyDBEF.edmx.diagram">
+      <DependentUpon>MyDBEF.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -145,7 +247,20 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="MyDBEF.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MyDBEF.Context.cs</LastGenOutput>
+      <DependentUpon>MyDBEF.edmx</DependentUpon>
+    </Content>
+    <Content Include="MyDBEF.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MyDBEF.edmx</DependentUpon>
+      <LastGenOutput>MyDBEF.cs</LastGenOutput>
+    </Content>
     <Content Include="Resources\logo_aeon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -19,7 +19,7 @@ namespace QL_Customers_Products
         {
             InitializeComponent();
         }
-        private string connectionString = "Server=DESKTOP-LP30U9P\\SQLEXPRESS;Database=QLKH_SP;User=sa;Password=123;"; // Thay thế bằng chuỗi kết nối của bạn
+        private string connectionString = "Server=LAPTOP-O9RB9ENH;Database=QLKH_SP;User=sa;Password=123;"; // Thay thế bằng chuỗi kết nối của bạn
         private SqlConnection connection;
         private SqlCommand command;
         private SqlDataAdapter adapter;
@@ -141,8 +141,8 @@ namespace QL_Customers_Products
             //        }
             //    }
             //}
-            BaoCaoThu bc = new BaoCaoThu();
-            bc.ShowDialog();
+            //BaoCaoThu bc = new BaoCaoThu();
+            //bc.ShowDialog();
         }
         private void button4_Click(object sender, EventArgs e)
         {
