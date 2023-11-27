@@ -49,8 +49,9 @@ namespace QL_Customers_Products
                     if (dataTable.Rows.Count > 0)
                         foreach (DataRow row in dataTable.Rows)
                             frmThanhToan.idNguoiDungHienTai = row["IdNguoiDung"].ToString();
-                    Home formThanhToan = new Home();
-                    formThanhToan.Show();
+                  frmMain main = new frmMain();
+                    main.ShowDialog();
+                  
                     this.Hide();
                     
                 }

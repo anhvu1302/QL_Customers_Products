@@ -19,7 +19,7 @@ namespace QL_Customers_Products
         {
             InitializeComponent();
         }
-        private string connectionString = @"Data Source =DESKTOP-UE7V70U\SQLEXPRESS;Initial Catalog=QLKH_SP; User ID=sa;Password=123"; // Thay thế bằng chuỗi kết nối của bạn
+        private string connectionString = "Server=DESKTOP-LP30U9P\\SQLEXPRESS;Database=QLKH_SP;User=sa;Password=123;"; // Thay thế bằng chuỗi kết nối của bạn
         private SqlConnection connection;
         private SqlCommand command;
         private SqlDataAdapter adapter;
@@ -122,29 +122,36 @@ namespace QL_Customers_Products
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            saveFileDialog1.Filter = "Text Files|*.txt"; // Đã chỉnh sửa filter đúng cú pháp
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                // Tạo stream để ghi vào file
-                using (Stream myStream = saveFileDialog1.OpenFile())
-                {
-                    // Tạo đối tượng StreamWriter để viết vào file
-                    using (StreamWriter writer = new StreamWriter(myStream))
-                    {
-                        // Duyệt qua từng dòng trong ListView và ghi vào file
-                        foreach (ListViewItem item in listView2.Items)
-                        {
-                            // Ghi nội dung từ các cột của mỗi dòng, cách nhau bằng dấu tab ("\t")
-                            string line = string.Join("\t", item.SubItems.Cast<ListViewItem.ListViewSubItem>().Select(subItem => subItem.Text));
-                            writer.WriteLine(line);
-                        }
-                    }
-                }
-            }
+            //saveFileDialog1.Filter = "Text Files|*.txt"; // Đã chỉnh sửa filter đúng cú pháp
+            //if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            //{
+            //    // Tạo stream để ghi vào file
+            //    using (Stream myStream = saveFileDialog1.OpenFile())
+            //    {
+            //        // Tạo đối tượng StreamWriter để viết vào file
+            //        using (StreamWriter writer = new StreamWriter(myStream))
+            //        {
+            //            // Duyệt qua từng dòng trong ListView và ghi vào file
+            //            foreach (ListViewItem item in listView2.Items)
+            //            {
+            //                // Ghi nội dung từ các cột của mỗi dòng, cách nhau bằng dấu tab ("\t")
+            //                string line = string.Join("\t", item.SubItems.Cast<ListViewItem.ListViewSubItem>().Select(subItem => subItem.Text));
+            //                writer.WriteLine(line);
+            //            }
+            //        }
+            //    }
+            //}
+            BaoCaoThu bc = new BaoCaoThu();
+            bc.ShowDialog();
         }
         private void button4_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

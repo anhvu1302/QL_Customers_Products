@@ -25,7 +25,7 @@ namespace QL_Customers_Products
             InitializeComponent();
             this.idHoaDon = idHoaDon;
         }
-        private string connectionString = @"Data Source =DESKTOP-UE7V70U\SQLEXPRESS;Initial Catalog=QLKH_SP; User ID=sa;Password=123"; // Thay thế bằng chuỗi kết nối của bạn
+        private string connectionString = "Server=DESKTOP-LP30U9P\\SQLEXPRESS;Database=QLKH_SP;User=sa;Password=123;"; // Thay thế bằng chuỗi kết nối của bạn
         private SqlConnection connection;
         private SqlCommand command;
         private SqlDataAdapter adapter;
