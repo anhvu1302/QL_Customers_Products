@@ -12,7 +12,7 @@ namespace QL_Customers_Products
 {
     public class AppDataContext: DbContext
     {
-        public AppDataContext() : base("Server = LAPTOP-O9RB9ENH; Database=QLKH_SP;User=sa;Password=123")
+        public AppDataContext() : base("Server = DESKTOP-UE7V70U\\SQLEXPRESS; Database=QLKH_SP;User=sa;Password=123")
         { }
         public DbSet<NhaCungCap> NhaCungCaps { get; set; }
         public DbSet<KhoHang> KhoHangs { get; set; }

@@ -19,7 +19,7 @@ namespace QL_Customers_Products
         {
             InitializeComponent();
         }
-        private string connectionString = "Server=LAPTOP-O9RB9ENH;Database=QLKH_SP;User=sa;Password=123;"; // Thay thế bằng chuỗi kết nối của bạn
+        private string connectionString = "Server=DESKTOP-UE7V70U\\SQLEXPRESS;Database=QLKH_SP;User=sa;Password=123;"; // Thay thế bằng chuỗi kết nối của bạn
         private SqlConnection connection;
         private SqlCommand command;
         private SqlDataAdapter adapter;
