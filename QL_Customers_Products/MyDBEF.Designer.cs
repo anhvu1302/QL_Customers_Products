@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\DOANCNPM\QL_Customers_Products\MyDBEF.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\xuanthang\OneDrive\Máy tính\New folder\Clone_github1\New folder\QL_Customers_Products\QL_Customers_Products\MyDBEF.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

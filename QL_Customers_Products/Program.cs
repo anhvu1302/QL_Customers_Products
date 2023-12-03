@@ -17,8 +17,9 @@ namespace QL_Customers_Products
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new frmDangNhap());
-            Application.Run(new FNhapHang());
+            //Application.Run(new FNhapHang());
             //Application.Run(new ());
+            Application.Run(new frm_QuangCao());
         }
     }
 }

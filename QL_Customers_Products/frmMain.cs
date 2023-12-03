@@ -49,5 +49,23 @@ namespace QL_Customers_Products
             closeForm();
             showFrm(new frmThanhToan());
         }
+
+        private void sbtn_NhapHang_Click(object sender, EventArgs e)
+        {
+            closeForm();
+            showFrm(new FNhapHang());
+        }
+
+        private void sbtn_QuangCao_Click(object sender, EventArgs e)
+        {
+            closeForm();
+            showFrm(new frm_QuangCao());
+        }
+
+        private void sbtn_YKien_Click(object sender, EventArgs e)
+        {
+            closeForm();
+            showFrm(new frm_ykien());
+        }
     }
 }

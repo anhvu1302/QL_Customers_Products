@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>QL_Customers_Products</RootNamespace>
     <AssemblyName>QL_Customers_Products</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -99,6 +99,7 @@
     <Compile Include="ChucVu.cs">
       <DependentUpon>MyDBEF.tt</DependentUpon>
     </Compile>
+    <Compile Include="DBConnect.cs" />
     <Compile Include="FNhapHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +117,24 @@
     </Compile>
     <Compile Include="frmMain.designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_chitietykien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_chitietykien.Designer.cs">
+      <DependentUpon>frm_chitietykien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_QuangCao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_QuangCao.Designer.cs">
+      <DependentUpon>frm_QuangCao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_ykien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ykien.Designer.cs">
+      <DependentUpon>frm_ykien.cs</DependentUpon>
     </Compile>
     <Compile Include="HoaDon.cs">
       <DependentUpon>MyDBEF.tt</DependentUpon>
@@ -170,6 +189,10 @@
     </Compile>
     <Compile Include="QuangCao.cs">
       <DependentUpon>MyDBEF.tt</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuangCao.Designer.cs">
+      <DependentUpon>QuangCao.cs</DependentUpon>
     </Compile>
     <Compile Include="QuayThanhToan.cs">
       <DependentUpon>MyDBEF.tt</DependentUpon>
@@ -212,6 +235,15 @@
     <EmbeddedResource Include="frmThanhToan.resx">
       <DependentUpon>frmThanhToan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_chitietykien.resx">
+      <DependentUpon>frm_chitietykien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_QuangCao.resx">
+      <DependentUpon>frm_QuangCao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_ykien.resx">
+      <DependentUpon>frm_ykien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -222,6 +254,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="QuangCao.resx">
+      <DependentUpon>QuangCao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Thu.resx">
       <DependentUpon>Thu.cs</DependentUpon>
     </EmbeddedResource>
